@@ -70,15 +70,17 @@ const AddNewScreen = () => {
       <h2 className="font-bold text-2xl mt-12 text-center">
         From Concept to Creation : Empowering your startup journey.
       </h2>
-      <button
-        onClick={() => {
-          navigation("/");
-        }}
-        className="btn btn-primary mt-7 w-24 ml-[450px]"
-      >
-        <ArrowLeft size={20} />
-        Back
-      </button>
+      <div className="flex justify-center">
+        <button
+          onClick={() => {
+            navigation("/");
+          }}
+          className="btn btn-primary mt-7 w-24"
+        >
+          <ArrowLeft size={20} />
+          Back
+        </button>
+      </div>
 
       <div className=" flex flex-col gap-2">
         <label>
