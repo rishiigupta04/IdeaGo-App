@@ -7,6 +7,7 @@ import { db } from "../../../utils/drizzle";
 import { Ideas } from "../../../utils/schema";
 import { desc } from "drizzle-orm";
 import IdeaList from "./components/IdeaList";
+import NewIdeaBtn from "./components/NewIdeaBtn";
 
 const HomeScreen = () => {
   const params = useLocation();
@@ -38,6 +39,9 @@ const HomeScreen = () => {
       <Hero />
       <Tabs />
       <IdeaList ideaList={ideaList} refreshData={getAllIdeas} />
+      <div className="flex w-100 justify-center py-3  ">
+        <NewIdeaBtn />
+      </div>
     </div>
   );
 };
