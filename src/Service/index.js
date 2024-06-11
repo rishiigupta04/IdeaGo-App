@@ -17,16 +17,16 @@ export const upVote = (id) => {
       };
 
   // Check if the id is already present in the upvotes array
-  if (votes.upvotes.includes(id)) {
+  if (votes?.upvotes?.includes(id)) {
     // If the id is already present, return false to indicate that the upvote operation failed
     return false;
   }
 
   // Add the id to the upvotes array
-  votes.upvotes.push(id);
+  votes?.upvotes?.push(id);
 
   // Remove the id from the downvotes array (if it exists)
-  const downVotes = votes.downvotes?.filter((item) => item !== id);
+  const downVotes = votes?.downvotes?.filter((item) => item !== id);
   votes.downvotes = downVotes;
 
   // Update the votes object in local storage
@@ -44,12 +44,12 @@ export const downVote = (id) => {
         downvotes: [],
       };
 
-  if (votes.downvotes.includes(id)) {
+  if (votes?.downvotes?.includes(id)) {
     return false;
   }
-  votes.downvotes.push(id);
+  votes?.downvotes?.push(id);
 
-  const upVotes = votes.upvotes?.filter((item) => item !== id);
+  const upVotes = votes?.upvotes?.filter((item) => item !== id);
   votes.upvotes = upVotes;
 
   localStorage.setItem("votes", JSON.stringify(votes));
@@ -65,7 +65,7 @@ export const checkIfAlreadyVoted = (id) => {
         upvotes: [], // Initialize an empty array to store the ids of the ideas that have been upvoted
         downvotes: [], // Initialize an empty array to store the ids of the ideas that have been downvoted
       };
-  return votes.upvotes.includes(id); // Check if the given id is present in the upvotes array. Return true if it is, false otherwise.
+  return votes?.upvotes?.includes(id); // Check if the given id is present in the upvotes array. Return true if it is, false otherwise.
 };
 
 export const checkIfAlreadyDownVoted = (id) => {
@@ -76,5 +76,5 @@ export const checkIfAlreadyDownVoted = (id) => {
         upvotes: [],
         downvotes: [],
       };
-  return votes.downvotes.includes(id);
+  return votes?.downvotes?.includes(id);
 };
