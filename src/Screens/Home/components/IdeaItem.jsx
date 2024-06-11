@@ -57,7 +57,7 @@ const IdeaItem = ({ idea, index, refreshData }) => {
           >
             🔥
           </h2>
-          <h2>{idea?.vote}</h2>
+          <h2 className="font-bold">{idea?.vote}</h2>
           <h2
             onClick={() => downvoteHandler()}
             className={`hover:scale-125 transition-all cursor-pointer rounded-2xl p-1
@@ -67,7 +67,7 @@ const IdeaItem = ({ idea, index, refreshData }) => {
           </h2>
         </div>
       </div>
-      <h2 className="font-thin tracking-tightest text-sm opacity-70 flex gap-6">
+      <h2 className="font-thin tracking-tightest text-sm opacity-70 flex gap-6 pt-4">
         <span></span>
         By {idea?.username} on {idea?.createdAt}
       </h2>

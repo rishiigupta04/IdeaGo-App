@@ -8,7 +8,7 @@ const Header = () => {
     <>
       <div className="flex justify-center gap-6 lg:gap-24  items-center">
         <div>
-          <img src="./././public/favicon.png" className="md:w-16 w-10" alt="" />
+          <img src="/favicon.png" className="md:w-16 w-10" alt="logo" />
         </div>
         <h2 className="text-2xl lg:text-5xl text-nowrap font-bold tracking-wide">
           Top 20 Ideas
