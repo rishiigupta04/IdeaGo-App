@@ -21,7 +21,7 @@ function App() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div
-        className="flex flex-col items-center p-4 md:p-10 w-full min-h-screen"
+        className="flex flex-col items-center p-4 md:p-10 w-full min-h-screen tracking-tightest"
         data-theme={theme}
       >
         <div className="max-w-5xl w-full items-center ">
