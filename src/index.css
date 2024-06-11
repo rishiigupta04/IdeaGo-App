@@ -19,5 +19,5 @@
   background-color: #242424;
 }
 
-@media screen {
+@media screen and (max-width: 768px) {
 }

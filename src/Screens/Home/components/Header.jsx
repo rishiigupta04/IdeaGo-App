@@ -7,6 +7,12 @@ const Header = () => {
   return (
     <>
       <div className="flex justify-center gap-6 lg:gap-24  items-center">
+        <div>
+          <img src="./././public/favicon.png" className="md:w-16 w-10" alt="" />
+        </div>
+        <h2 className="text-2xl lg:text-5xl text-nowrap font-bold tracking-wide">
+          Top 20 Ideas
+        </h2>
         <button
           onClick={() => {
             navigation("/new");
@@ -16,10 +22,6 @@ const Header = () => {
           <ClipboardPlus size={20} />
           New Idea
         </button>
-
-        <h2 className="text-2xl lg:text-5xl text-nowrap font-bold tracking-wide">
-          Top 20 Ideas 🔥
-        </h2>
       </div>
     </>
   );
