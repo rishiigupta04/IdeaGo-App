@@ -7,9 +7,11 @@ import { db } from "../../../utils/drizzle";
 import { Ideas } from "../../../utils/schema";
 import { desc } from "drizzle-orm";
 import IdeaList from "./components/IdeaList";
-import NewIdeaBtn from "./components/NewIdeaBtn";
+import { ClipboardPlus } from "lucide-react";
+import { useNavigate } from "react-router-dom/dist";
 
 const HomeScreen = () => {
+  const navigation = useNavigate();
   const params = useLocation();
   const [ideaList, setIdeaList] = useState([]);
 
@@ -40,7 +42,15 @@ const HomeScreen = () => {
       <Tabs />
       <IdeaList ideaList={ideaList} refreshData={getAllIdeas} />
       <div className="flex w-100 justify-center py-3  ">
-        <NewIdeaBtn />
+        <button
+          onClick={() => {
+            navigation("/new");
+          }}
+          className="btn btn-primary btn-sm sm:btn-md"
+        >
+          <ClipboardPlus size={20} />
+          New Idea
+        </button>
       </div>
     </div>
   );
