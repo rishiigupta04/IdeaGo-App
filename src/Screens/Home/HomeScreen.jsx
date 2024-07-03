@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Tabs from "./components/Tabs";
@@ -9,6 +9,8 @@ import { desc } from "drizzle-orm";
 import IdeaList from "./components/IdeaList";
 import { ClipboardPlus } from "lucide-react";
 import { useNavigate } from "react-router-dom/dist";
+import Loading from "./components/Loading";
+import Footer from "./components/Footer";
 
 const HomeScreen = () => {
   const navigation = useNavigate();
@@ -40,8 +42,10 @@ const HomeScreen = () => {
       <Header />
       <Hero />
       <Tabs />
-      <IdeaList ideaList={ideaList} refreshData={getAllIdeas} />
-      <div className="flex w-100 justify-center py-3  ">
+      <Suspense fallback={<Loading />}>
+        <IdeaList ideaList={ideaList} refreshData={getAllIdeas} />
+      </Suspense>
+      {/* <div className="flex w-100 justify-center py-3  ">
         <button
           onClick={() => {
             navigation("/new");
@@ -51,7 +55,8 @@ const HomeScreen = () => {
           <ClipboardPlus size={20} />
           New Idea
         </button>
-      </div>
+      </div> */}
+      <Footer />
     </div>
   );
 };
